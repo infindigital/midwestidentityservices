@@ -1,0 +1,11 @@
+# robots.txt — Midwest Identity Services
+# https://midwestidentityservices.com/
+
+User-agent: *
+Allow: /
+
+# Build tooling and source notes are not content.
+Disallow: /_developer/
+Disallow: /mail/
+
+Sitemap: https://midwestidentityservices.com/sitemap.xml

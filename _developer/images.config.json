@@ -1,0 +1,42 @@
+{
+  "_readme": "Central image registry. Replace a file in _developer/image-sources/ (same filename), then run `npm run images` from the _developer folder. Pages reference assets/images/photos/<name>-<width>.webp|jpg, so the HTML does not need to change. \"fullSize\": true also writes assets/images/photos/<name>.jpg at the largest width, for photos used as a social sharing or schema image. Do not rename 'name' values without updating the HTML. Every photo here is a temporary stock or placeholder image: swap in the real Midwest Identity Services photography before launch.",
+  "brand": {
+    "source": "logo-white.png",
+    "width": 440,
+    "inkColor": "#0D1321"
+  },
+  "og": {
+    "background": "digital-fingerprint.jpg"
+  },
+  "photos": [
+    { "name": "hero-livescan",          "source": "hero-fingerprinting.jpg",   "aspect": "4:5",  "widths": [560, 960],  "position": "attention", "fullSize": true, "usedOn": "Homepage hero (Individuals), Live Scan page hero" },
+    { "name": "fingerprint-card",       "source": "fingerprint-card.png",      "aspect": "4:5",  "widths": [500, 900],  "position": "centre",    "usedOn": "FD-258 ink card sections" },
+    { "name": "digital-fingerprint",    "source": "digital-fingerprint.jpg",   "aspect": "16:9", "widths": [960, 1440], "position": "centre", "quality": 72, "fullSize": true, "usedOn": "Dark CTA bands and the social sharing image" },
+
+    { "name": "group-onboarding",       "source": "group-onboarding.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "fullSize": true, "usedOn": "Homepage hero (Business), group and corporate fingerprinting" },
+    { "name": "business-handshake",     "source": "business-handshake.jpg",    "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Business solutions, corporate accounts" },
+    { "name": "office-consult",         "source": "office-consult.jpg",        "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Vendor credentialing, FINRA" },
+    { "name": "contractor-site",        "source": "contractor-site.jpg",       "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Vendor and contractor screening" },
+    { "name": "multi-state-business",   "source": "multi-state-business.jpg",  "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Multi-state and out-of-state submissions" },
+    { "name": "team-at-laptop",         "source": "multi-state-team-at-laptop.jpg", "aspect": "3:2", "widths": [800, 1400], "position": "attention", "usedOn": "Business pages, account setup" },
+    { "name": "desk-scene",             "source": "multi-state-desk-scene-no-people.jpg", "aspect": "3:2", "widths": [800, 1400], "position": "centre", "usedOn": "Quiet supporting image on business and guide pages" },
+
+    { "name": "drug-testing-lab",       "source": "drug-testing-lab.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "fullSize": true, "usedOn": "Homepage hero (Drug testing), drug testing pages" },
+    { "name": "lab-analysis",           "source": "lab-analysis.jpg",          "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Drug testing basics, panel pages" },
+    { "name": "dot-truck",              "source": "dot-truck.jpg",             "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "fullSize": true, "usedOn": "Homepage hero (DOT), all DOT testing pages" },
+
+    { "name": "notary-apostille",       "source": "notary-apostille.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "FBI checks and apostille, ATF forms, ink card pages" },
+    { "name": "kc-skyline",             "source": "kc-skyline.jpg",            "aspect": "3:2",  "widths": [800, 1400], "position": "centre",    "fullSize": true, "usedOn": "Locations hub and every city page" },
+
+    { "name": "security-team",          "source": "security-team.jpg",         "aspect": "4:5",  "widths": [640, 1100], "position": "attention", "usedOn": "Alarm and security group fingerprinting" },
+    { "name": "security-guard-lobby",   "source": "security-guard-lobby.jpg",  "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Guard licensing sections" },
+    { "name": "alarm-technician",       "source": "alarm-technician.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Alarm and low-voltage technician sections" },
+    { "name": "low-voltage-technician", "source": "low-voltage-technician.jpg","aspect": "3:2",  "widths": [800],       "position": "attention", "usedOn": "Alarm page supporting image" },
+    { "name": "smart-home-security",    "source": "smart-home-security.jpg",   "aspect": "3:2",  "widths": [800],       "position": "centre",    "usedOn": "Alarm page supporting image" },
+
+    { "name": "nursing-students",       "source": "nursing-students.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Healthcare licensing, student cohorts" },
+    { "name": "nursing-clinical",       "source": "nursing-clinical.jpg",      "aspect": "3:2",  "widths": [800, 1400], "position": "attention", "usedOn": "Healthcare licensing sections" },
+    { "name": "nursing-portrait",       "source": "nursing-student-portrait.jpg", "aspect": "4:5", "widths": [640, 1100], "position": "north",   "usedOn": "Individual fingerprinting hero" },
+    { "name": "university-campus",      "source": "university-campus.jpg",     "aspect": "3:2",  "widths": [800, 1400], "position": "centre",    "usedOn": "On-site and campus sessions" }
+  ]
+}

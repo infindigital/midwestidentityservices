@@ -1,0 +1,19 @@
+{
+  "name": "midwest-identity-services-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static HTML/CSS/JS website for Midwest Identity Services (Kansas City fingerprinting, FBI background checks and drug testing).",
+  "scripts": {
+    "images": "node scripts/build-images.cjs",
+    "layout": "node scripts/sync-layout.cjs",
+    "sitemap": "node scripts/build-sitemap.cjs",
+    "check": "node scripts/check-site.cjs",
+    "guide": "node scripts/build-image-guide.cjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  },
+  "allowScripts": {
+    "sharp@0.33.5": true
+  }
+}

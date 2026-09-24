@@ -1,0 +1,256 @@
+MIDWEST IDENTITY SERVICES WEBSITE
+Image replacement guide
+============================================================
+
+Every photo on the website is a temporary stock image, chosen to show the
+right subject at the right shape. Replace them with your own photos whenever
+you are ready: no page needs to be edited.
+
+HOW TO REPLACE A PHOTO
+----------------------
+
+  1. Pick the photo below that you want to change.
+  2. Save your new picture using EXACTLY the file name shown as
+     "Replace the file". Keep the same file extension (.jpg or .png).
+  3. Put it into the folder:  _developer/image-sources/
+     (overwrite the file that is already there)
+  4. Ask your developer to run:  npm run images
+
+  That one command re-cuts your picture into every size the website needs
+  and updates all the pages that use it.
+
+A few tips
+----------
+
+- Send the largest version you have. Big pictures can be made smaller
+  without losing quality; small ones cannot be made larger.
+- Match the shape shown for each photo. A portrait photo put in a landscape
+  slot will be cropped at the top and bottom.
+- Keep the important part of the picture near the middle, so it survives
+  cropping on phones.
+- Do not use pictures of an FBI seal, badge or government logo. They suggest
+  an official affiliation the business does not have.
+- Make sure you have permission to use every photo of a real person or a
+  real workplace.
+
+
+THE PHOTOS ON THE WEBSITE
+============================================================
+
+1. Hero livescan
+   Replace the file:  _developer/image-sources/hero-fingerprinting.jpg
+   Shape needed:      4:5  portrait (taller than wide)
+   Smallest useful:   960 pixels wide
+   Appears on:        /, /about-us/, /atf-efile-fingerprinting/,
+                      /columbia-fdle/, /fingerprint-rejection-causes/,
+                      /florida-live-scan/,
+                      /how-long-do-fbi-background-check-results-take/,
+                      /live-scan-fingerprinting/, /spanish/, /st-louis-fdle/,
+                      /what-is-live-scan-fingerprinting-and-where-to-get-it-done-in-kansas-city/
+   Purpose:           Homepage hero (Individuals), Live Scan page hero
+
+2. Fingerprint card
+   Replace the file:  _developer/image-sources/fingerprint-card.png
+   Shape needed:      4:5  portrait (taller than wide)
+   Smallest useful:   900 pixels wide
+   Appears on:        /about-us/, /fd-258-ink-card-fingerprinting/,
+                      /fingerprint-methods/, /fingerprint-rejection-causes/,
+                      /finra-fingerprinting/, /individual-fingerprinting/,
+                      /live-scan-vs-ink-card/, /nics-appeal-fingerprinting/
+   Purpose:           FD-258 ink card sections
+
+3. Group onboarding
+   Replace the file:  _developer/image-sources/group-onboarding.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /, /corporate-fingerprinting/, /group-fingerprinting/,
+                      /location/fingerprinting-lees-summit-mo/,
+                      /mobile-fingerprinting/, /spanish/
+   Purpose:           Homepage hero (Business), group and corporate
+                      fingerprinting
+
+4. Business handshake
+   Replace the file:  _developer/image-sources/business-handshake.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /business-solutions/, /location/overland-park-ks/
+   Purpose:           Business solutions, corporate accounts
+
+5. Office consult
+   Replace the file:  _developer/image-sources/office-consult.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /finra-fingerprinting/,
+                      /location/fingerprinting-olathe-ks/,
+                      /vendor-credentialing/
+   Purpose:           Vendor credentialing, FINRA
+
+6. Contractor site
+   Replace the file:  _developer/image-sources/contractor-site.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /, /vendor-contractor-background-screening/
+   Purpose:           Vendor and contractor screening
+
+7. Multi state business
+   Replace the file:  _developer/image-sources/multi-state-business.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /, /individual-fingerprinting/,
+                      /location/fingerprinting-liberty-mo/, /spanish/
+   Purpose:           Multi-state and out-of-state submissions
+
+8. Team at laptop
+   Replace the file:  _developer/image-sources/multi-state-team-at-laptop.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /about-us/, /location/fingerprinting-independence-mo/,
+                      /mobile-fingerprinting/,
+                      /vendor-contractor-background-screening/
+   Purpose:           Business pages, account setup
+
+9. Desk scene
+   Replace the file:  _developer/image-sources/multi-state-desk-scene-no-people.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /location/fingerprinting-blue-springs-mo/
+   Purpose:           Quiet supporting image on business and guide pages
+
+10. Drug testing lab
+   Replace the file:  _developer/image-sources/drug-testing-lab.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /, /10-panel-drug-testing/, /9-panel-drug-testing/,
+                      /dot-drug-and-alcohol/, /dot-post-accident-testing/,
+                      /drug-testing/, /spanish/
+   Purpose:           Homepage hero (Drug testing), drug testing pages
+
+11. Lab analysis
+   Replace the file:  _developer/image-sources/lab-analysis.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /10-panel-drug-testing/, /5-panel-drug-testing/,
+                      /9-panel-drug-testing/, /dot-5-panel-testing/,
+                      /drug-testing/
+   Purpose:           Drug testing basics, panel pages
+
+12. Dot truck
+   Replace the file:  _developer/image-sources/dot-truck.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /, /dot-5-panel-testing/, /dot-drug-and-alcohol/,
+                      /dot-post-accident-testing/,
+                      /usps-contractor-fingerprinting/
+   Purpose:           Homepage hero (DOT), all DOT testing pages
+
+13. Notary apostille
+   Replace the file:  _developer/image-sources/notary-apostille.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /atf-fingerprinting/,
+                      /fbi-background-checks-apostille/,
+                      /fd-258-ink-card-fingerprinting/,
+                      /individual-fingerprinting/,
+                      /live-scan-fingerprinting/, /what-is-an-ori-number/
+   Purpose:           FBI checks and apostille, ATF forms, ink card pages
+
+14. Kc skyline
+   Replace the file:  _developer/image-sources/kc-skyline.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /contact-us/,
+                      /kansas-citys-premier-fingerprinting-services/,
+                      /location/, /location/fbi-background-check-raytown-mo/,
+                      /location/fingerprinting-kansas-city-ks/,
+                      /location/fingerprinting-kansas-city-mo/,
+                      /secure-your-future-locate-certified-fingerprinting-services-in-kansas-city/
+   Purpose:           Locations hub and every city page
+
+15. Security team
+   Replace the file:  _developer/image-sources/security-team.jpg
+   Shape needed:      4:5  portrait (taller than wide)
+   Smallest useful:   1100 pixels wide
+   Appears on:        /alarm-security-group-fingerprinting/
+   Purpose:           Alarm and security group fingerprinting
+
+16. Nursing students
+   Replace the file:  _developer/image-sources/nursing-students.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /florida-live-scan/, /group-fingerprinting/
+   Purpose:           Healthcare licensing, student cohorts
+
+17. Nursing clinical
+   Replace the file:  _developer/image-sources/nursing-clinical.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Appears on:        /columbia-fdle/, /st-louis-fdle/,
+                      /vendor-credentialing/
+   Purpose:           Healthcare licensing sections
+
+18. Nursing portrait
+   Replace the file:  _developer/image-sources/nursing-student-portrait.jpg
+   Shape needed:      4:5  portrait (taller than wide)
+   Smallest useful:   1100 pixels wide
+   Appears on:        /individual-fingerprinting/
+   Purpose:           Individual fingerprinting hero
+
+
+PREPARED BUT NOT CURRENTLY ON A PAGE
+============================================================
+
+These are ready to use if a page needs them later. Nothing breaks if they
+are left alone.
+
+1. Digital fingerprint
+   Replace the file:  _developer/image-sources/digital-fingerprint.jpg
+   Shape needed:      16:9  wide banner
+   Smallest useful:   1440 pixels wide
+   Purpose:           Dark CTA bands and the social sharing image
+
+2. Security guard lobby
+   Replace the file:  _developer/image-sources/security-guard-lobby.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Purpose:           Guard licensing sections
+
+3. Alarm technician
+   Replace the file:  _developer/image-sources/alarm-technician.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Purpose:           Alarm and low-voltage technician sections
+
+4. Low voltage technician
+   Replace the file:  _developer/image-sources/low-voltage-technician.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   800 pixels wide
+   Purpose:           Alarm page supporting image
+
+5. Smart home security
+   Replace the file:  _developer/image-sources/smart-home-security.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   800 pixels wide
+   Purpose:           Alarm page supporting image
+
+6. University campus
+   Replace the file:  _developer/image-sources/university-campus.jpg
+   Shape needed:      3:2  landscape (wider than tall)
+   Smallest useful:   1400 pixels wide
+   Purpose:           On-site and campus sessions
+
+
+LOGO AND FAVICON
+============================================================
+
+The logo and the small icon in the browser tab live in assets/images/brand/.
+To change them, send your developer the logo as an SVG file if you have one,
+or as a large PNG with a transparent background.
+
+SOCIAL SHARING PICTURE
+============================================================
+
+assets/images/social/og-image.jpg is the picture that appears when someone
+shares a link to the site on Facebook, LinkedIn, WhatsApp or in a text
+message. It is generated from the "digital fingerprint" photo above, so
+replacing that photo replaces this one too.
+

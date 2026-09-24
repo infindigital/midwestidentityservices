@@ -1,0 +1,21 @@
+# Dependencies - restore with: cd _developer && npm install
+node_modules/
+
+# Live mail credentials. config.php holds the Gmail App Password and belongs
+# only on the web server. Copy config.sample.php to config.php there and fill
+# SMTP_PASS in. See _developer/README.md section 5.
+mail/config.php
+
+# Reference material and working files, not part of the published site.
+Midwest - HTML.zip
+__probe.html
+__shot.html
+
+# OS and editor noise
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp

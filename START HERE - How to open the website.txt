@@ -1,0 +1,112 @@
+MIDWEST IDENTITY SERVICES
+Main website - how to open and review it
+=========================================
+
+1. Copy or unzip this whole folder onto your computer. Keep every folder
+   together.
+
+2. Open the folder and double-click "index.html".
+   The homepage opens in your web browser (Chrome, Edge, Safari or Firefox).
+
+3. Use the menu, buttons and links to move between pages, just as you would
+   online.
+
+
+Helpful tips
+------------
+- Do not move index.html (or any page folder) out of this folder. The pages
+  need the "assets" folder that sits next to them.
+
+- If double-clicking opens a text or code editor instead of a browser,
+  right-click index.html, choose "Open with" and pick your web browser.
+
+- Every "Book an Appointment" button opens your existing booking page:
+  https://midwestidentityservices.com/book-an-appointment/
+  That page is not part of this rebuild and keeps working exactly as it does
+  now.
+
+- The contact form on the Contact page needs a web server to actually send
+  mail. While you are reviewing from this folder it will check the fields and
+  then tell the visitor to call instead, rather than pretending it sent.
+
+- Photos are temporary stock images. Replace them whenever you are ready; see
+  "_developer/IMAGE REPLACEMENT GUIDE.txt".
+
+
+Please check these before we publish
+------------------------------------
+Your current website gives two different answers in a few places. We had to
+pick one for each. Please confirm which is correct:
+
+  Address   We used:  8101 E. Bannister Rd, Kansas City, MO 64134
+            Also on your site:  Oak St, Kansas City, MO 64106
+
+  Hours     We used:  Monday to Friday 9AM-6PM, Saturday 10AM-3PM
+            Also on your site:  Monday to Friday 9AM-5PM, weekends on call
+
+  Email     We used:  moservices.midwest@gmail.com
+            Also on your site:  mwfingerprinting@gmail.com
+
+Also please confirm:
+
+  - The reviews. "5.0 from 152 Google reviews" and the six customer quotes were
+    taken from your current website. They are written into these pages as fixed
+    text, so they will not update by themselves as new reviews come in.
+
+  - The numbers. "99% successful verifications", "150+ business clients" and
+    "5+ years experience" also come from your current homepage.
+
+  - The privacy policy date. It reads "Effective Date: August 10, 2026",
+    copied from your current site.
+
+
+What is in this folder
+----------------------
+index.html                       Homepage (start here)
+
+For individuals:
+  individual-fingerprinting        Individual services hub
+  live-scan-fingerprinting         Live Scan fingerprinting
+  fd-258-ink-card-fingerprinting   FD-258 ink cards
+  atf-fingerprinting               ATF, NFA and FFL
+  atf-efile-fingerprinting         ATF eFile
+  finra-fingerprinting             FINRA
+  nics-appeal-fingerprinting       NICS appeals
+  fbi-background-checks-apostille  FBI checks and apostille
+  mobile-fingerprinting            Mobile service
+
+For business:
+  business-solutions               Business hub
+  corporate-fingerprinting         Corporate accounts
+  group-fingerprinting             Group and onsite sessions
+  vendor-credentialing             Vendor credentialing
+  vendor-contractor-background-screening
+  alarm-security-group-fingerprinting
+  usps-contractor-fingerprinting
+
+Drug and DOT testing:
+  drug-testing                     Drug testing hub
+  5-panel-drug-testing, 9-panel-drug-testing, 10-panel-drug-testing
+  dot-drug-and-alcohol             DOT programs
+  dot-5-panel-testing, dot-post-accident-testing
+
+Locations:
+  location                         Locations hub, plus 9 city pages inside it
+
+Guides and articles:
+  blogs                            Blog hub, plus 7 articles
+  fingerprint-methods              Which fingerprint method you need
+  drug-testing-basics              Panels, windows and results
+  purpose-of-dot                   DOT physicals explained
+  florida-live-scan, st-louis-fdle, columbia-fdle   Out-of-state Live Scan
+
+Other pages:
+  about-us                         About us
+  contact-us                       Contact and enquiry form
+  spanish                          Spanish version of the homepage
+  privacy-and-data-handling-policy Privacy and data handling policy
+
+assets                    Design, scripts, fonts and images used by every page
+404.html, robots.txt, sitemap.xml   Files needed when the site is published
+_developer                Tools and notes for the web developer
+                          (not needed for viewing, and not published online)

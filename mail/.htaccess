@@ -1,0 +1,11 @@
+# Only send.php is meant to be reached from the web.
+Options -Indexes
+
+<FilesMatch "^(config|config\.sample)\.php$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^vendor/ - [F,L]
+</IfModule>

@@ -301,13 +301,22 @@
               </ul>
             </div>
           </li>
-          <li class="nav__item"><a class="nav__link" href="about-us/">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="contact-us/">Contact</a></li>
+          <li class="nav__item has-panel">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <div class="nav__panel nav__panel--end" id="panel-about">
+              <ul class="panel__grid">
+                <li><a class="panel__link" href="about-us/"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span><span class="panel__title">About Us</span><span class="panel__desc">Who we are and how we work</span></span></a></li>
+                <li><a class="panel__link" href="contact-us/"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><span><span class="panel__title">Contact Us</span><span class="panel__desc">Questions, quotes and group bookings</span></span></a></li>
+                <li><a class="panel__link" href="spanish/" lang="es"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span><span class="panel__title">Servicios en Espa&ntilde;ol</span><span class="panel__desc">Atenci&oacute;n en espa&ntilde;ol</span></span></a></li>
+              </ul>
+              <div class="panel__footer"><span>Mon&ndash;Fri 9&ndash;6 &middot; Sat 10&ndash;3</span><a class="text-link" href="tel:+18164420295">(816) 442-0295 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="header__actions">
-        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>(816) 442-0295</span></a>
+        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295" title="Call (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
         <a class="btn btn--primary btn--sm" href="https://midwestidentityservices.com/book-an-appointment/">Book an Appointment</a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span class="menu-toggle__bars"></span></button>
       </div>
@@ -368,8 +377,13 @@
           <a href="blogs/">Blog &amp; Guides</a>
         </div>
       </div>
-      <div class="m-group"><a class="m-link" href="about-us/">About Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <div class="m-group"><a class="m-link" href="contact-us/">Contact Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="m-group">
+        <button class="m-group__trigger" type="button" aria-expanded="false" aria-controls="m-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="m-group__panel" id="m-about" hidden>
+          <a href="about-us/">About Us</a>
+          <a href="contact-us/">Contact Us</a>
+        </div>
+      </div>
       <div class="m-group"><a class="m-link" href="spanish/" lang="es">Servicios en Espa&ntilde;ol <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></a></div>
     </nav>
     <div class="mobile-nav__footer">
@@ -528,47 +542,260 @@
       </div>
     </div>
 
-    <!-- PATH CHOOSER ====================================================== -->
-    <section class="section section--paper" id="who-for" aria-labelledby="path-title">
+    <!-- INDUSTRIES WE SERVE ============================================== -->
+    <section class="section section--paper industries" id="industries" aria-labelledby="ind-title">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Choose your path</p>
-            <h2 id="path-title" data-reveal>Who are you booking for?</h2>
+            <p class="eyebrow">Industries we serve</p>
+            <h2 id="ind-title" data-reveal>Trusted by the organizations that screen people for a living</h2>
           </div>
-          <p class="section-head__intro lead" data-reveal>Find exactly what you need, without searching. Everything is organised by who you are.</p>
+          <p class="section-head__intro lead" data-reveal>Hospitals, schools, insurers, fleets and security firms across Kansas City send their people to us. Pick your industry to see what we handle for teams like yours.</p>
         </div>
 
-        <div class="path-grid">
-          <div class="path-card i-card" data-reveal>
-            <span class="icon-box icon-box--lg"><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg></span>
-            <span class="path-card__kicker">For yourself</span>
-            <h3>I&rsquo;m an Individual</h3>
-            <p>Personal fingerprinting, FBI background checks, state licences, ATF and eForms firearms applications, FINRA and more &mdash; booked for yourself.</p>
-            <ul class="check-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FD-258 ink card fingerprinting</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FDLE and out-of-state card submissions</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FBI Identity History Summary</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>ATF, NFA, FFL and FINRA fingerprinting</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Background checks and I-9 verification</span></li>
-            </ul>
-            <a class="btn btn--outline" href="individual-fingerprinting/">See Individual Services <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="ind-explorer" data-industries data-reveal>
+          <div class="ind-tabs" role="tablist" aria-label="Industries" aria-orientation="vertical">
+            <button class="ind-tab is-active" type="button" role="tab" id="ind-tab-hospitals" aria-controls="ind-panel-hospitals" aria-selected="true" tabindex="0">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Hospitals &amp; Health Systems</span><span class="ind-tab__sub">Clinical staff, contractors, volunteers</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-schools" aria-controls="ind-panel-schools" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-grad"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Universities &amp; Schools</span><span class="ind-tab__sub">Faculty, student placements, districts</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-nursing" aria-controls="ind-panel-nursing" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Nursing &amp; Allied Health</span><span class="ind-tab__sub">Licensure, travel nurses, programs</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-insurance" aria-controls="ind-panel-insurance" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Insurance &amp; Financial Services</span><span class="ind-tab__sub">Agents, broker-dealers, adjusters</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-security" aria-controls="ind-panel-security" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Security &amp; Alarm Companies</span><span class="ind-tab__sub">Guards, installers, low-voltage techs</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-transport" aria-controls="ind-panel-transport" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Transportation &amp; DOT Fleets</span><span class="ind-tab__sub">Drivers, dispatch, safety-sensitive roles</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-contractors" aria-controls="ind-panel-contractors" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-contract"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Contractors &amp; Vendors</span><span class="ind-tab__sub">Site access, government contracts</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button class="ind-tab" type="button" role="tab" id="ind-tab-staffing" aria-controls="ind-panel-staffing" aria-selected="false" tabindex="-1">
+              <span class="ind-tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <span class="ind-tab__text"><span class="ind-tab__name">Staffing &amp; Corporate HR</span><span class="ind-tab__sub">New-hire cohorts, recurring onboarding</span></span>
+              <span class="ind-tab__go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
           </div>
+          <div class="ind-stage">
+            <article class="ind-panel is-active" role="tabpanel" id="ind-panel-hospitals" aria-labelledby="ind-tab-hospitals">
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: nursing-clinical -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/nursing-clinical-800.webp 800w, assets/images/photos/nursing-clinical-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/nursing-clinical-800.jpg" srcset="assets/images/photos/nursing-clinical-800.jpg 800w, assets/images/photos/nursing-clinical-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="A nurse reviewing a chart with a colleague on a hospital ward" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospitals &amp; Health Systems</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Credential clinical teams without slowing onboarding</h3>
+                <p>Hospitals run nurses, techs, travelers and volunteers through fingerprinting and drug screens on tight start dates. We book them in batches, on site or at our office, and check every print before it leaves.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>CMS and state board fingerprinting for licensed staff</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>10-panel and pre-employment drug testing</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>On-site sessions for orientation cohorts</span></li>
+                </ul>
+                <a class="text-link" href="vendor-credentialing/">Healthcare credentialing <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-schools" aria-labelledby="ind-tab-schools" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: university-campus -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/university-campus-800.webp 800w, assets/images/photos/university-campus-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/university-campus-800.jpg" srcset="assets/images/photos/university-campus-800.jpg 800w, assets/images/photos/university-campus-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="Students walking across a university campus" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-grad"/></svg>Universities &amp; Schools</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Clear every student placement before the semester starts</h3>
+                <p>Clinical programs, teacher prep and K&ndash;12 districts need prints for whole cohorts at once. We run a campus session, handle each student&rsquo;s agency requirements and keep the schedule on one account.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Group sessions on campus for entire cohorts</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Live Scan and FD-258 cards for placement sites</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Faculty, staff and volunteer background checks</span></li>
+                </ul>
+                <a class="text-link" href="group-fingerprinting/">Campus &amp; group sessions <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-nursing" aria-labelledby="ind-tab-nursing" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: nursing-students -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/nursing-students-800.webp 800w, assets/images/photos/nursing-students-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/nursing-students-800.jpg" srcset="assets/images/photos/nursing-students-800.jpg 800w, assets/images/photos/nursing-students-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="Nursing students in scrubs gathered in a training lab" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg>Nursing &amp; Allied Health</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Licence-ready prints for nurses in any state</h3>
+                <p>Nursing and allied health licences often need prints on another state&rsquo;s card or submitted through that state&rsquo;s channel. We know which boards want what, so applications are not bounced back.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Out-of-state FD-258 cards for board applications</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Florida FDLE Live Scan for AHCA screening</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FBI Identity History Summary for travel contracts</span></li>
+                </ul>
+                <a class="text-link" href="fd-258-ink-card-fingerprinting/">Licensing fingerprints <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-insurance" aria-labelledby="ind-tab-insurance" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: office-consult -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/office-consult-800.webp 800w, assets/images/photos/office-consult-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/office-consult-800.jpg" srcset="assets/images/photos/office-consult-800.jpg 800w, assets/images/photos/office-consult-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="Two advisers reviewing documents across an office desk" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Insurance &amp; Financial Services</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Registration prints for agents and advisers</h3>
+                <p>Insurance producers, adjusters and FINRA-registered reps need prints formatted for a regulator. We capture them correctly the first time and help firms onboard whole teams on one invoice.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FINRA Form U4 fingerprinting for broker-dealers</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Non-resident insurance licensing prints</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Corporate accounts with volume pricing</span></li>
+                </ul>
+                <a class="text-link" href="finra-fingerprinting/">FINRA &amp; licensing prints <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-security" aria-labelledby="ind-tab-security" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: security-guard-lobby -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/security-guard-lobby-800.webp 800w, assets/images/photos/security-guard-lobby-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/security-guard-lobby-800.jpg" srcset="assets/images/photos/security-guard-lobby-800.jpg 800w, assets/images/photos/security-guard-lobby-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="A uniformed security officer at a building lobby desk" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Security &amp; Alarm Companies</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Licensing prints for every guard and installer</h3>
+                <p>Guard and alarm licences are often required in several states at once. We print your whole crew in one visit and match every card to the state that will receive it.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Multi-state guard and alarm licensing cards</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Group sessions at your office or yard</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FBI checks and drug testing on one account</span></li>
+                </ul>
+                <a class="text-link" href="alarm-security-group-fingerprinting/">Alarm &amp; security groups <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-transport" aria-labelledby="ind-tab-transport" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: dot-truck -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/dot-truck-800.webp 800w, assets/images/photos/dot-truck-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/dot-truck-800.jpg" srcset="assets/images/photos/dot-truck-800.jpg 800w, assets/images/photos/dot-truck-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="A semi truck on the highway" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Transportation &amp; DOT Fleets</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>DOT-compliant testing that keeps drivers on the road</h3>
+                <p>Fleets need Part 40 collections fast, especially after an accident. We run DOT drug and alcohol testing with the documentation your safety file needs.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>DOT 5-panel and breath alcohol testing</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Post-accident testing inside the federal time limits</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>USPS contract driver fingerprinting</span></li>
+                </ul>
+                <a class="text-link" href="dot-drug-and-alcohol/">DOT drug &amp; alcohol <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-contractors" aria-labelledby="ind-tab-contractors" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: contractor-site -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/contractor-site-800.webp 800w, assets/images/photos/contractor-site-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/contractor-site-800.jpg" srcset="assets/images/photos/contractor-site-800.jpg 800w, assets/images/photos/contractor-site-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="A construction worker in a hard hat on an active job site" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-contract"/></svg>Contractors &amp; Vendors</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>One audit-ready screening program for every vendor</h3>
+                <p>Facilities that let contractors on site need proof every worker was screened. We run the fingerprints, checks and drug tests and keep the records in one place.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Vendor and contractor background screening</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Badge-ready vendor credentialing</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>On-site prints at your facility or job site</span></li>
+                </ul>
+                <a class="text-link" href="vendor-contractor-background-screening/">Contractor screening <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+            <article class="ind-panel" role="tabpanel" id="ind-panel-staffing" aria-labelledby="ind-tab-staffing" inert>
+              <div class="ind-panel__media">
+                <!-- IMAGE SLOT: group-onboarding -->
+                <picture>
+                  <source type="image/webp" srcset="assets/images/photos/group-onboarding-800.webp 800w, assets/images/photos/group-onboarding-1400.webp 1400w" sizes="(max-width: 960px) 100vw, 700px">
+                  <img src="assets/images/photos/group-onboarding-800.jpg" srcset="assets/images/photos/group-onboarding-800.jpg 800w, assets/images/photos/group-onboarding-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 700px" width="1400" height="933" alt="A new-hire cohort seated around a table during onboarding" loading="lazy" decoding="async">
+                </picture>
+                <span class="ind-panel__badge"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Staffing &amp; Corporate HR</span>
+              </div>
+              <div class="ind-panel__body">
+                <h3>Screen every new hire on one account</h3>
+                <p>Staffing firms and HR teams onboard people every week. We set up recurring sessions, bill per candidate and give you one point of contact who knows your requirements.</p>
+                <ul class="ind-panel__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Recurring on-site fingerprinting for new hires</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Pre-employment drug testing and I-9 support</span></li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Per-candidate billing and volume pricing</span></li>
+                </ul>
+                <a class="text-link" href="corporate-fingerprinting/">Corporate accounts <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
 
-          <div class="path-card path-card--dark i-card" data-reveal style="--reveal-delay:90ms">
-            <span class="icon-box icon-box--lg"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
-            <span class="path-card__kicker">For your organisation</span>
-            <h3>I&rsquo;m a Business</h3>
-            <p>Onsite group fingerprinting, employee screening and full compliance programs for Kansas City employers &mdash; billed to one corporate account, managed by one point of contact.</p>
-            <ul class="check-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Onsite and recurring group fingerprinting for new-hire cohorts</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Multi-state licensing: FINRA, FDLE and non-resident insurance</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Corporate accounts, volume pricing and onsite mobile service</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>DOT compliance programs</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>FBI background checks and Identity History Summary reviews</span></li>
-            </ul>
-            <a class="btn btn--primary" href="business-solutions/">See Business Solutions <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
+      <p class="ind-ribbon__label container">Also working with</p>
+      <div class="ind-ribbon">
+        <div class="ind-ribbon__track">
+          <ul class="ind-ribbon__group">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Home health agencies</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Senior living communities</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Childcare centers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>K&ndash;12 school districts</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Law firms</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Real estate brokerages</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Property managers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pharmacies</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Banks &amp; credit unions</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Churches &amp; youth programs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Federal contractors</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Property &amp; casualty insurers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>FFL dealers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Logistics &amp; warehousing</li>
+          </ul>
+          <ul class="ind-ribbon__group" aria-hidden="true">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Home health agencies</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Senior living communities</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Childcare centers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>K&ndash;12 school districts</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Law firms</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Real estate brokerages</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Property managers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pharmacies</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Banks &amp; credit unions</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Churches &amp; youth programs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Federal contractors</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Property &amp; casualty insurers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>FFL dealers</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Logistics &amp; warehousing</li>
+          </ul>
         </div>
       </div>
     </section>

@@ -1251,3 +1251,88 @@ const SITE_ROOT = (() => {
     sync();
   });
 })();
+
+/* ==========================================================================
+   Industries explorer (homepage): pick an industry and the panel beside it
+   switches. It advances on its own, with a progress line under the active
+   tab, and holds while the pointer is over it, while a keyboard user is on
+   the tabs or while it is off screen. Never auto-plays under
+   prefers-reduced-motion.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  const root = document.querySelector('[data-industries]');
+  if (!root) return;
+  const tabs = Array.prototype.slice.call(root.querySelectorAll('.ind-tab'));
+  const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
+  const list = root.querySelector('.ind-tabs');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DURATION = 7000;
+
+  let index = 0;
+  let elapsed = 0;
+  let last = 0;
+  let visible = false;
+  let hovering = false;
+
+  const select = (next, focus) => {
+    index = (next + tabs.length) % tabs.length;
+    tabs.forEach((tab, n) => {
+      const on = n === index;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', String(on));
+      tab.tabIndex = on ? 0 : -1;
+      tab.style.setProperty('--p', '0');
+    });
+    panels.forEach((panel, n) => {
+      const on = n === index;
+      panel.classList.toggle('is-active', on);
+      if (on) panel.removeAttribute('inert'); else panel.setAttribute('inert', '');
+    });
+    // Phones: the tabs are a sideways row, so keep the active chip in view.
+    if (list.scrollWidth > list.clientWidth + 2) {
+      const delta = tabs[index].getBoundingClientRect().left - list.getBoundingClientRect().left - 16;
+      list.scrollTo({ left: list.scrollLeft + delta, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    if (focus) tabs[index].focus();
+    elapsed = 0;
+  };
+
+  tabs.forEach((tab, n) => {
+    tab.addEventListener('click', () => select(n));
+    tab.addEventListener('keydown', (e) => {
+      const keys = { ArrowDown: index + 1, ArrowRight: index + 1, ArrowUp: index - 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      select(keys[e.key], true);
+    });
+  });
+
+  if (reduce) return;
+
+  root.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') hovering = true; });
+  root.addEventListener('pointerleave', () => { hovering = false; });
+  const keyboardOnTabs = () => {
+    const el = document.activeElement;
+    return !!el && el.classList.contains('ind-tab') && el.matches(':focus-visible');
+  };
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; }, { threshold: 0.3 }).observe(root);
+  } else {
+    visible = true;
+  }
+
+  const tick = (now) => {
+    const dt = last ? Math.min(now - last, 100) : 0;
+    last = now;
+    if (visible && !hovering && !document.hidden && !keyboardOnTabs()) {
+      elapsed += dt;
+      tabs[index].style.setProperty('--p', Math.min(elapsed / DURATION, 1).toFixed(4));
+      if (elapsed >= DURATION) select(index + 1);
+    }
+    window.requestAnimationFrame(tick);
+  };
+  window.requestAnimationFrame(tick);
+})();

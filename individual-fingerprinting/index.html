@@ -65,7 +65,7 @@
       { "@type": "Question", "name": "How fast do FBI results come back?", "acceptedAnswer": { "@type": "Answer", "text": "Through our authorized FBI channeling service, Identity History Summary results typically return to the applicant within 1 minute up to 5 days." } },
       { "@type": "Question", "name": "Do you fingerprint for ATF gun trust applications?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We routinely fingerprint multi-trustee gun trusts. All Responsible Persons can be scheduled in a single appointment. See our dedicated ATF / FFL Fingerprinting page for details on Form 1, Form 4, Form 5, and FFL Form 23." } },
       { "@type": "Question", "name": "What ID do I need to bring?", "acceptedAnswer": { "@type": "Answer", "text": "A valid, unexpired government-issued photo ID - driver's license, state ID, or U.S. passport." } },
-      { "@type": "Question", "name": "What does fingerprinting cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing varies by service. ATF fingerprinting is $75 per transaction. Call (816) 442-0295 or check our booking page for current rates on other services." } },
+      { "@type": "Question", "name": "What does fingerprinting cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing varies by service. FD-258 fingerprint cards are $45 for the first card and $20 for each additional card. Live Scan print to card is $60 for the first card and $25 for each additional printed card. An FBI Identity History Summary background check is $90. ATF fingerprinting is $75 per transaction. Call (816) 442-0295 or check our booking page for current rates on other services." } },
       { "@type": "Question", "name": "I'm not sure which service I need - can you help?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Call us at (816) 442-0295 before you come in. Tell us what agency is asking for fingerprints and we will confirm exactly what you need to bring - usually takes less than two minutes." } }
     ]
   }
@@ -221,13 +221,22 @@
               </ul>
             </div>
           </li>
-          <li class="nav__item"><a class="nav__link" href="../about-us/">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="../contact-us/">Contact</a></li>
+          <li class="nav__item has-panel">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <div class="nav__panel nav__panel--end" id="panel-about">
+              <ul class="panel__grid">
+                <li><a class="panel__link" href="../about-us/"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span><span class="panel__title">About Us</span><span class="panel__desc">Who we are and how we work</span></span></a></li>
+                <li><a class="panel__link" href="../contact-us/"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><span><span class="panel__title">Contact Us</span><span class="panel__desc">Questions, quotes and group bookings</span></span></a></li>
+                <li><a class="panel__link" href="../spanish/" lang="es"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span><span class="panel__title">Servicios en Espa&ntilde;ol</span><span class="panel__desc">Atenci&oacute;n en espa&ntilde;ol</span></span></a></li>
+              </ul>
+              <div class="panel__footer"><span>Mon&ndash;Fri 9&ndash;6 &middot; Sat 10&ndash;3</span><a class="text-link" href="tel:+18164420295">(816) 442-0295 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="header__actions">
-        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>(816) 442-0295</span></a>
+        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295" title="Call (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
         <a class="btn btn--primary btn--sm" href="https://midwestidentityservices.com/book-an-appointment/">Book an Appointment</a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span class="menu-toggle__bars"></span></button>
       </div>
@@ -288,8 +297,13 @@
           <a href="../blogs/">Blog &amp; Guides</a>
         </div>
       </div>
-      <div class="m-group"><a class="m-link" href="../about-us/">About Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <div class="m-group"><a class="m-link" href="../contact-us/">Contact Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="m-group">
+        <button class="m-group__trigger" type="button" aria-expanded="false" aria-controls="m-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="m-group__panel" id="m-about" hidden>
+          <a href="../about-us/">About Us</a>
+          <a href="../contact-us/">Contact Us</a>
+        </div>
+      </div>
       <div class="m-group"><a class="m-link" href="../spanish/" lang="es">Servicios en Espa&ntilde;ol <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></a></div>
     </nav>
     <div class="mobile-nav__footer">
@@ -732,7 +746,7 @@
           </details>
           <details class="faq__item">
             <summary class="faq__q">What does fingerprinting cost?<span class="faq__toggle" aria-hidden="true"></span></summary>
-            <div class="faq__a"><p>Pricing varies by service. ATF fingerprinting is $75 per transaction. Call (816) 442-0295 or check our booking page for current rates on other services.</p></div>
+            <div class="faq__a"><p>Pricing varies by service. FD-258 fingerprint cards are $45 for the first card and $20 for each additional card. Live Scan print to card is $60 for the first card and $25 for each additional printed card. An FBI Identity History Summary background check is $90. ATF fingerprinting is $75 per transaction. Call (816) 442-0295 or check our booking page for current rates on other services.</p></div>
           </details>
           <details class="faq__item">
             <summary class="faq__q">I am not sure which service I need &mdash; can you help?<span class="faq__toggle" aria-hidden="true"></span></summary>

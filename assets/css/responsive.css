@@ -10,15 +10,6 @@
   .site-header.is-scrolled .header__logo img { width: 148px; }
   .nav__list { gap: 0; }
   .nav__link, .nav__trigger { padding-inline: 0.6rem; }
-  .header__call span { display: none; }
-  .header__call {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid var(--line-dark-strong);
-    border-radius: var(--r-sm);
-  }
 
   .footer__top { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .footer__brand { grid-column: 1 / span 2; }
@@ -527,8 +518,6 @@
   .nav__list { gap: 0; }
 }
 @media (max-width: 1140px) and (min-width: 961px) {
-  .header__call span { display: none; }
-  .header__call { padding: 0; }
   .nav__link,
   .nav__trigger { padding-inline: 0.5rem; font-size: 0.9rem; }
   .nav__panel--wide { width: 500px; }
@@ -584,10 +573,12 @@
 @media (max-width: 1024px) {
   .spot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .spot-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spot-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 @media (max-width: 520px) {
   .spot-grid,
   .spot-grid--3 { grid-template-columns: minmax(0, 1fr); }
+  .spot-grid > :last-child:nth-child(odd) { grid-column: auto; }
 }
 
 /* Feature list */
@@ -642,4 +633,68 @@
   .reviews__rail.is-ready .reviews__window::before,
   .reviews__rail.is-ready .reviews__window::after { width: var(--gutter); }
   .reviews__controls { margin-top: var(--space-4); }
+}
+
+/* ==========================================================================
+   Count-aware grids (see the end of style.css): step down evenly
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .service-cards:has(> :nth-child(4):last-child),
+  .program-table:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .program-table:has(> :nth-child(4):last-child) > :nth-child(3) { padding-left: 0; border-left: 0; }
+  .program-table:has(> :nth-child(4):last-child) > :nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .sector-grid:has(> :nth-child(6):last-child) > li:last-child { grid-column: auto; }
+}
+@media (max-width: 960px) {
+  .service-cards:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sector-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .program-table:has(> :nth-child(4):last-child) { grid-template-columns: minmax(0, 1fr); }
+  .program-table:has(> :nth-child(4):last-child) > :nth-child(n) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 760px) {
+  .stat-row:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-row:has(> :nth-child(4):last-child) > :nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 600px) {
+  .service-cards:has(> :nth-child(4):last-child) { grid-template-columns: minmax(0, 1fr); }
+  .benefit-rows > :last-child:nth-child(odd) { grid-column: auto; }
+}
+
+/* Industries explorer: tabs become a sideways chip row above the panel */
+@media (max-width: 960px) {
+  .ind-explorer { grid-template-columns: minmax(0, 1fr); }
+  .ind-tabs {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-2);
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 2px var(--gutter) 6px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .ind-tabs::-webkit-scrollbar { display: none; }
+  .ind-tab {
+    flex: none;
+    width: auto;
+    grid-template-columns: 34px auto;
+    gap: var(--space-3);
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    border-color: var(--line);
+    border-radius: 99px;
+    background: var(--surface);
+    scroll-snap-align: start;
+  }
+  .ind-tab:hover { translate: 0 0; }
+  .ind-tab__icon { width: 34px; height: 34px; border-radius: 50%; }
+  .ind-tab__icon .icon { width: 17px; height: 17px; }
+  .ind-tab__sub,
+  .ind-tab__go { display: none; }
+  .ind-tab__name { font-size: 0.92rem; white-space: nowrap; }
+}
+@media (max-width: 600px) {
+  .ind-panel__media { aspect-ratio: 3 / 2; }
+  .ind-panel__badge { left: var(--space-4); bottom: var(--space-4); }
 }

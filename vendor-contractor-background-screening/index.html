@@ -219,13 +219,22 @@
               </ul>
             </div>
           </li>
-          <li class="nav__item"><a class="nav__link" href="../about-us/">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="../contact-us/">Contact</a></li>
+          <li class="nav__item has-panel">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <div class="nav__panel nav__panel--end" id="panel-about">
+              <ul class="panel__grid">
+                <li><a class="panel__link" href="../about-us/"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span><span class="panel__title">About Us</span><span class="panel__desc">Who we are and how we work</span></span></a></li>
+                <li><a class="panel__link" href="../contact-us/"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><span><span class="panel__title">Contact Us</span><span class="panel__desc">Questions, quotes and group bookings</span></span></a></li>
+                <li><a class="panel__link" href="../spanish/" lang="es"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span><span class="panel__title">Servicios en Espa&ntilde;ol</span><span class="panel__desc">Atenci&oacute;n en espa&ntilde;ol</span></span></a></li>
+              </ul>
+              <div class="panel__footer"><span>Mon&ndash;Fri 9&ndash;6 &middot; Sat 10&ndash;3</span><a class="text-link" href="tel:+18164420295">(816) 442-0295 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="header__actions">
-        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>(816) 442-0295</span></a>
+        <a class="header__call" href="tel:+18164420295" aria-label="Call us at (816) 442-0295" title="Call (816) 442-0295"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
         <a class="btn btn--primary btn--sm" href="https://midwestidentityservices.com/book-an-appointment/">Book an Appointment</a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span class="menu-toggle__bars"></span></button>
       </div>
@@ -286,8 +295,13 @@
           <a href="../blogs/">Blog &amp; Guides</a>
         </div>
       </div>
-      <div class="m-group"><a class="m-link" href="../about-us/">About Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <div class="m-group"><a class="m-link" href="../contact-us/">Contact Us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="m-group">
+        <button class="m-group__trigger" type="button" aria-expanded="false" aria-controls="m-about">About <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="m-group__panel" id="m-about" hidden>
+          <a href="../about-us/">About Us</a>
+          <a href="../contact-us/">Contact Us</a>
+        </div>
+      </div>
       <div class="m-group"><a class="m-link" href="../spanish/" lang="es">Servicios en Espa&ntilde;ol <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></a></div>
     </nav>
     <div class="mobile-nav__footer">

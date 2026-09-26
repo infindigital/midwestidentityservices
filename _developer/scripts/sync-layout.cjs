@@ -78,6 +78,9 @@ const SECTIONS = {
     'secure-your-future-locate-certified-fingerprinting-services-in-kansas-city/',
     'kansas-citys-premier-fingerprinting-services/',
   ],
+  about: [
+    'about-us/', 'contact-us/',
+  ],
 };
 
 function sectionOf(page) {

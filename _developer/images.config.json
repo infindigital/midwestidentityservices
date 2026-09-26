@@ -10,6 +10,7 @@
   },
   "photos": [
     { "name": "hero-livescan",          "source": "hero-fingerprinting.jpg",   "aspect": "4:5",  "widths": [560, 960],  "position": "attention", "fullSize": true, "usedOn": "Homepage hero (Individuals), Live Scan page hero" },
+    { "name": "about-process",          "source": "about-process.jpg",         "aspect": "4:5",  "widths": [560, 960],  "position": "centre",    "usedOn": "About Us: The fingerprinting process" },
     { "name": "fingerprint-card",       "source": "fingerprint-card.png",      "aspect": "4:5",  "widths": [500, 900],  "position": "centre",    "usedOn": "FD-258 ink card sections" },
     { "name": "digital-fingerprint",    "source": "digital-fingerprint.jpg",   "aspect": "16:9", "widths": [960, 1440], "position": "centre", "quality": 72, "fullSize": true, "usedOn": "Dark CTA bands and the social sharing image" },
 

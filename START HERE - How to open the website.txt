@@ -49,12 +49,17 @@ pick one for each. Please confirm which is correct:
 
 Also please confirm:
 
-  - The reviews. "5.0 from 152 Google reviews" and the six customer quotes were
+  - The reviews. "5.0 from 150+ Google reviews" and the six customer quotes were
     taken from your current website. They are written into these pages as fixed
     text, so they will not update by themselves as new reviews come in.
 
-  - The numbers. "99% successful verifications", "150+ business clients" and
-    "5+ years experience" also come from your current homepage.
+  - The numbers. As your brief asked, the site now uses only these figures
+    everywhere: 150+ five-star Google reviews, 5+ years serving Kansas City,
+    Missouri + Kansas coverage, and individual, mobile and corporate service.
+
+  - The 30-day reprint policy. Before customers are offered reprints, please
+    confirm the retention policy now written into section 8 of the Privacy &
+    Data Handling Policy, and that you collect written consent at the counter.
 
   - The privacy policy date. It reads "Effective Date: August 10, 2026",
     copied from your current site.
@@ -63,6 +68,19 @@ Also please confirm:
 What is in this folder
 ----------------------
 index.html                       Homepage (start here)
+
+New pages from the September 2026 brief:
+  multi-state-fingerprinting       Multi-state licensing: one capture, many cards
+  fingerprinting-requirements      Fingerprinting Requirements Center
+  healthcare-fingerprinting        Healthcare and medical professionals
+  nursing-student-fingerprinting   Nursing schools and universities
+  which-fingerprint-cards-do-i-need-for-multiple-states      Article
+  do-i-need-to-be-fingerprinted-again-for-every-fd-258-card  Article
+  mobile-fbi-identity-history-summary-for-executives         Article
+  atf-eform-fingerprints-eft-file-or-fingerprint-cards       Article
+  corporate/example-company        Sample private employee booking page
+                                   (hidden from search; copy it for each
+                                   corporate client)
 
 For individuals:
   individual-fingerprinting        Individual services hub

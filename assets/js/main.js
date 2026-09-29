@@ -43,7 +43,7 @@ const SITE_ROOT = (() => {
   }
 
   const header = document.querySelector('[data-header]');
-  const mqMobile = window.matchMedia('(max-width: 960px)');
+  const mqMobile = window.matchMedia('(max-width: 1100px)');
 
   /* ---------------- Header: compact on scroll ---------------- */
   if (header) {
@@ -1000,7 +1000,7 @@ const SITE_ROOT = (() => {
   bar.className = 'action-bar';
   bar.innerHTML = '<a class="btn btn--ghost-dark" href="tel:+18164420295">'
     + '<svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>'
-    + '<a class="btn btn--primary" href="https://midwestidentityservices.com/book-an-appointment/">Book an Appointment</a>';
+    + '<a class="btn btn--primary" href="https://midwestidentityservices.com/book-an-appointment/">Book Fingerprinting</a>';
   document.body.appendChild(bar);
 
   const closing = document.querySelector('.cta-band');
@@ -1335,4 +1335,107 @@ const SITE_ROOT = (() => {
     window.requestAnimationFrame(tick);
   };
   window.requestAnimationFrame(tick);
+})();
+
+/* ---------------- Copy buttons ([data-copy]) ----------------
+   Used for company codes on private corporate booking pages. The label
+   inside [data-copy-label] confirms the copy for two seconds. */
+(function () {
+  'use strict';
+
+  const buttons = document.querySelectorAll('[data-copy]');
+  if (!buttons.length) return;
+
+  const fallbackCopy = (text) => {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'absolute';
+    area.style.left = '-9999px';
+    document.body.appendChild(area);
+    area.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    area.remove();
+    return ok ? Promise.resolve() : Promise.reject();
+  };
+
+  buttons.forEach((btn) => {
+    const label = btn.querySelector('[data-copy-label]');
+    const original = label ? label.textContent : '';
+    let timer;
+    btn.addEventListener('click', () => {
+      const text = btn.getAttribute('data-copy');
+      const copy = navigator.clipboard && window.isSecureContext
+        ? navigator.clipboard.writeText(text).catch(() => fallbackCopy(text))
+        : fallbackCopy(text);
+      copy.then(() => {
+        btn.classList.add('is-copied');
+        if (label) label.textContent = 'Copied';
+      }, () => {
+        if (label) label.textContent = 'Select and copy';
+      }).then(() => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          btn.classList.remove('is-copied');
+          if (label) label.textContent = original;
+        }, 2000);
+      });
+    });
+  });
+})();
+
+/* ---------------- Requirements Center search ([data-req-search]) ----------------
+   Filters the browse groups and the "In your words" questions as you type.
+   Every word typed must appear somewhere in an entry (its text plus the group
+   heading), so "florida nurse" narrows rather than widens. Hidden without JS. */
+(function () {
+  'use strict';
+
+  const box = document.querySelector('[data-req-search]');
+  if (!box) return;
+  const input = box.querySelector('input');
+  const status = box.querySelector('[role="status"]');
+  const empty = box.querySelector('[data-req-empty]');
+  const groups = Array.prototype.slice.call(document.querySelectorAll('.req-group'));
+  const questions = Array.prototype.slice.call(document.querySelectorAll('#questions .resource-item'));
+
+  // A few everyday words people type that the entries phrase differently.
+  const SYNONYMS = {
+    nurse: 'nursing healthcare', rn: 'nursing healthcare', doctor: 'healthcare physician',
+    gun: 'atf firearms eft', firearm: 'atf eft', eform: 'atf eft', fbi: 'identity history summary',
+    background: 'fbi identity history summary', card: 'fd-258', ink: 'fd-258', digital: 'live scan',
+    livescan: 'live scan', teacher: 'teachers education', school: 'nursing students universities',
+    bank: 'financial finra', broker: 'finra financial', alarm: 'security', guard: 'security',
+    driver: 'contractors usps transportation', states: 'multi-state several', reprint: 'additional cards later',
+    employer: 'corporate employer', company: 'corporate employer', rejected: 'rejected',
+  };
+
+  const norm = (t) => t.toLowerCase().replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
+  const index = (el, extra) => norm(`${el.textContent} ${extra || ''}`);
+
+  const entries = [];
+  groups.forEach((g) => {
+    const head = g.querySelector('h3').textContent;
+    g.querySelectorAll('.req-group__list li').forEach((li) => entries.push({ el: li, group: g, text: index(li, head) }));
+  });
+  questions.forEach((q) => entries.push({ el: q, group: null, text: index(q) }));
+
+  const run = () => {
+    const terms = norm(input.value).split(' ').filter(Boolean);
+    let shown = 0;
+    entries.forEach((e) => {
+      const hit = terms.every((t) => e.text.includes(t) || (SYNONYMS[t] || '').split(' ').some((s) => s && e.text.includes(s)));
+      e.el.hidden = !hit;
+      if (hit) shown += 1;
+    });
+    groups.forEach((g) => { g.hidden = !g.querySelector('.req-group__list li:not([hidden])'); });
+    const filtering = terms.length > 0;
+    empty.hidden = !filtering || shown > 0;
+    status.textContent = filtering ? (shown ? `${shown} matching topic${shown === 1 ? '' : 's'}` : 'No matching topics') : '';
+  };
+
+  box.hidden = false;
+  input.addEventListener('input', run);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Escape') { input.value = ''; run(); } });
 })();

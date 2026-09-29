@@ -54,32 +54,45 @@ function pageInfo(file) {
   return { rel, page, root, home: depth ? root : './' };
 }
 
+// Nav groups, matching the brief's primary navigation:
+// Fingerprinting | FBI Background Checks | Multi-State Licensing | Businesses & Groups | Drug Testing | Locations | Resources
 const SECTIONS = {
-  individuals: [
+  fingerprinting: [
     'individual-fingerprinting/', 'live-scan-fingerprinting/', 'fd-258-ink-card-fingerprinting/',
-    'atf-fingerprinting/', 'finra-fingerprinting/', 'fbi-background-checks-apostille/',
-    'nics-appeal-fingerprinting/', 'mobile-fingerprinting/',
+    'atf-fingerprinting/', 'atf-efile-fingerprinting/', 'finra-fingerprinting/', 'florida-live-scan/',
+    'nics-appeal-fingerprinting/', 'mobile-fingerprinting/', 'atf-eform-fingerprints-eft-file-or-fingerprint-cards/',
+  ],
+  fbi: [
+    'fbi-background-checks-apostille/', 'how-long-do-fbi-background-check-results-take/',
+    'mobile-fbi-identity-history-summary-for-executives/',
+  ],
+  multistate: [
+    'multi-state-fingerprinting/', 'which-fingerprint-cards-do-i-need-for-multiple-states/',
+    'do-i-need-to-be-fingerprinted-again-for-every-fd-258-card/',
   ],
   business: [
     'business-solutions/', 'corporate-fingerprinting/', 'group-fingerprinting/',
     'vendor-credentialing/', 'vendor-contractor-background-screening/',
     'alarm-security-group-fingerprinting/', 'usps-contractor-fingerprinting/',
+    'healthcare-fingerprinting/', 'nursing-student-fingerprinting/',
   ],
   testing: [
     'drug-testing/', '5-panel-drug-testing/', '9-panel-drug-testing/', '10-panel-drug-testing/',
     'dot-drug-and-alcohol/', 'dot-5-panel-testing/', 'dot-post-accident-testing/', 'purpose-of-dot/',
   ],
+  locations: [
+    'location/', 'location/fingerprinting-kansas-city-mo/', 'location/fingerprinting-kansas-city-ks/',
+    'location/fingerprinting-independence-mo/', 'location/fingerprinting-lees-summit-mo/',
+    'location/fingerprinting-blue-springs-mo/', 'location/fingerprinting-liberty-mo/',
+    'location/fingerprinting-olathe-ks/', 'location/overland-park-ks/',
+    'location/fbi-background-check-raytown-mo/', 'st-louis-fdle/', 'columbia-fdle/',
+  ],
   resources: [
-    'fingerprint-methods/', 'drug-testing-basics/', 'florida-live-scan/', 'st-louis-fdle/',
-    'columbia-fdle/', 'atf-efile-fingerprinting/', 'blogs/',
-    'how-long-do-fbi-background-check-results-take/', 'what-is-an-ori-number/',
-    'live-scan-vs-ink-card/', 'fingerprint-rejection-causes/',
+    'fingerprinting-requirements/', 'fingerprint-methods/', 'drug-testing-basics/', 'blogs/',
+    'what-is-an-ori-number/', 'live-scan-vs-ink-card/', 'fingerprint-rejection-causes/',
     'what-is-live-scan-fingerprinting-and-where-to-get-it-done-in-kansas-city/',
     'secure-your-future-locate-certified-fingerprinting-services-in-kansas-city/',
-    'kansas-citys-premier-fingerprinting-services/',
-  ],
-  about: [
-    'about-us/', 'contact-us/',
+    'kansas-citys-premier-fingerprinting-services/', 'about-us/', 'contact-us/',
   ],
 };
 

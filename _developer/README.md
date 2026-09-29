@@ -5,7 +5,7 @@ https://midwestidentityservices.com/. It carries the content of the existing
 WordPress site over to the design system used by the organizations subdomain
 site, page for page and URL for URL.
 
-53 pages, no build step required to view them. Only images, layout partials and
+62 pages, no build step required to view them. Only images, layout partials and
 the sitemap are generated.
 
 ---
@@ -47,6 +47,16 @@ Midwest Main/
 ├── fingerprint-methods/  drug-testing-basics/  purpose-of-dot/     Reference guides
 ├── florida-live-scan/  st-louis-fdle/  columbia-fdle/              Out-of-state Live Scan
 ├── about-us/  contact-us/  spanish/  privacy-and-data-handling-policy/
+│
+│   Added for the September 2026 strategy brief:
+├── multi-state-fingerprinting/                Signature service: one capture, multiple cards
+├── fingerprinting-requirements/               Fingerprinting Requirements Center (hub)
+├── healthcare-fingerprinting/  nursing-student-fingerprinting/   Industry pages
+├── which-fingerprint-cards-do-i-need-for-multiple-states/        Customer-question articles
+│   do-i-need-to-be-fingerprinted-again-for-every-fd-258-card/
+│   mobile-fbi-identity-history-summary-for-executives/
+│   atf-eform-fingerprints-eft-file-or-fingerprint-cards/
+├── corporate/example-company/                 Private employee booking page TEMPLATE (noindex)
 │
 ├── mail/                                      Contact form email (PHP): send.php, config.php, PHPMailer
 │
@@ -291,7 +301,7 @@ point to the English service pages, because no Spanish sub-pages exist.
 
 **Sitemap:** `sitemap.xml` is generated from the pages themselves. Run
 `npm run sitemap` after adding or removing a page. It lists every page with a
-canonical URL and no `noindex`, which is why `404.html` is excluded: 52 URLs.
+canonical URL and no `noindex`, which is why `404.html` and the private `corporate/` pages are excluded.
 
 `robots.txt` blocks `/_developer/` and `/mail/`. Better still, do not upload
 `_developer/` to the live server at all.
@@ -323,15 +333,20 @@ the LocalBusiness schema on the homepage and every location page. Grep for
 
 ### Also confirm
 
-- **Channeling partner.** Copy says electronic FBI submission goes "through an
-  authorized channeling partner", following the live site. The site does not
-  claim the business is itself an FBI-approved channeler. Confirm this wording.
-- **Reviews.** "5.0 from 152 Google reviews" and the six quoted reviews were
+- **Reviews.** "5.0 from 150+ Google reviews" and the six quoted reviews were
   taken from the live site's Google widget. This build hardcodes them, so they
   will go stale. Confirm they may be used as static text.
-- **Statistics.** "99% successful verifications", "150+ business clients" and
-  "5+ years experience" come from the live site's homepage counters. Confirm
-  they are accurate before launch.
+- **Retention policy before advertising reprints.** The brief requires a written
+  policy (consent, permitted use, access controls, secure storage, deletion at
+  30 days, vendor/agency restrictions) before the 30-day reprint offer goes
+  live. Section 8 of the privacy policy now states it; the business must also
+  operate it (written consent form at the counter, deletion process).
+- **Turnaround figures not in the brief.** FDLE "1-3 days", background-check
+  packages "1-3 business days" (business-solutions) and drug tests "within
+  1 minute up to 5 days" were kept from the live site. Confirm them.
+- **ATF price.** $75 is applied to both EFT files and ATF FD-258 paper cards.
+- **"One of the few Missouri-based providers"** for FDLE (St. Louis and Columbia
+  pages) is an unverified comparative claim carried over from the live site.
 - **Photos.** Every photo is a temporary stock image. See
   `IMAGE REPLACEMENT GUIDE.txt`.
 - **FBI apostille page.** The live site's "FBI Fingerprinting by City/State"
@@ -339,4 +354,53 @@ the LocalBusiness schema on the homepage and every location page. Grep for
   plain text chips; only the 9 real location pages are linked. Decide whether
   those pages should be built or the lists trimmed.
 - **Effective date on the privacy policy** reads "August 10, 2026", taken
-  verbatim from the live site. Confirm it is correct.
+  verbatim from the live site. A retention section was added in September 2026,
+  so update the date and version when the client approves it.
+
+---
+
+## 8. September 2026 strategy brief: how it was implemented
+
+Source: *Website Strategy & Developer Implementation Brief* (September 2026).
+
+**Approved facts, used everywhere.** Proof figures are only: 150+ five-star
+Google reviews, 5+ years serving Kansas City, Missouri + Kansas coverage,
+individual / mobile / corporate service. Prices: FD-258 $45 (+$20 per card,
+cards and envelope supplied), Multi-State Print-to-Card $60 (+$25 per printed
+card), FBI Identity History Summary Electronic Submission $90, ATF/EFT $75.
+FBI results: "often within 24-72 hours of electronic submission". Never
+describe the business as FBI-authorized or as a channeler. ATF/EFT is live.
+Always "when permitted by the receiving agency"; never guarantee acceptance.
+
+**Navigation** follows the brief: Fingerprinting | FBI Background Checks |
+Multi-State Licensing | Businesses & Groups | Drug Testing | Locations |
+Resources | Book Now. The full labels do not fit beside the logo at the
+1220px container, so on desktop the long words ("Background", "Licensing",
+"es & Groups") sit in `.nav__long`, visually hidden but still part of the
+button's accessible name. The mobile menu shows full labels and now takes over
+at **1100px** (was 960px): `mqMobile` in main.js and the rules in
+responsive.css must stay in step.
+
+**Industry pages** reuse existing URLs where a page already targeted the
+audience (FINRA, security/alarm, USPS/transportation, corporate, ATF) rather
+than creating near-duplicate URLs from the brief's examples. Only healthcare
+and nursing-student pages are new.
+
+**Recurring CTA.** "Check My Requirements" links to
+`contact-us/?service=requirements#contact`, which preselects the
+"Help me identify my fingerprint requirement" option; such emails arrive with
+the subject "Requirement review: ...". The option values in the form and the
+`$services` whitelist in `mail/send.php` must match exactly (they did not
+before this update, which rejected most submissions).
+
+**Corporate booking pages.** Copy `corporate/example-company/` to
+`corporate/<company-slug>/` and edit the values marked EDIT. Keep the
+noindex tag; `npm run sitemap` leaves noindex pages out. There is deliberately
+no `/corporate/` index page, so the list of clients is not discoverable.
+Unlisted is not private: protect a folder with server-side authentication if
+it carries client pricing or sensitive instructions.
+
+**Locations** are organized as KC Metro / Missouri / Kansas on `location/`
+(anchors `#kc-metro`, `#missouri`, `#kansas`). Cities without a real
+page are listed without links, as "call to confirm". Do not mass-produce
+city pages; each new one needs genuinely local content.

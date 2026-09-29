@@ -1,6 +1,6 @@
 /* ==========================================================================
    Midwest Identity Services: Responsive rules
-   Breakpoints: 1180 · 1024 · 960 (nav switch) · 860 · 760 · 600 · 480 · 400
+   Breakpoints: 1240 · 1180 · 1100 (nav switch) · 1024 · 960 · 860 · 760 · 600 · 480 · 400
    ========================================================================== */
 
 /* ≤ 1180px ---------------------------------------------------------------- */
@@ -418,6 +418,7 @@
   .hero--stage .hero-stage { order: 4; margin: var(--space-4) 0 0; }
   .hero--stage .hero__lead { order: 5; margin-top: var(--space-7); font-size: 1.02rem; line-height: 1.6; }
   .hero--stage .hero__actions { order: 6; margin-top: var(--space-6); }
+  .hero--stage .hero-trust { order: 7; }
 
   /* Chips: one row that swipes sideways, bleeding to the screen edges */
   .hero--stage .hero-picker__label { display: none; }
@@ -510,21 +511,38 @@
    MAIN SITE: responsive rules for the top bar, wider nav and new components
    ========================================================================== */
 
-/* The main site carries seven nav items, so the row needs to tighten earlier
-   than the four-item subdomain nav did. */
+/* The main site carries seven nav groups (the client brief's primary nav), so
+   the row is tightened at every desktop width and hands over to the mobile
+   menu at 1100px rather than 960px. The long words of "FBI Background Checks",
+   "Multi-State Licensing" and "Businesses & Groups" sit in .nav__long: hidden
+   on screen, still read out as part of the button's name. */
+.nav__long {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.nav__list { gap: 0; }
+.nav__link,
+.nav__trigger { padding-inline: 0.5rem; font-size: 0.9rem; }
+.nav__panel--end.nav__panel--wide { width: 560px; }
 @media (max-width: 1280px) {
-  .nav__link,
-  .nav__trigger { padding-inline: 0.62rem; font-size: 0.93rem; }
-  .nav__list { gap: 0; }
+  .header__inner { gap: var(--space-5); }
 }
-@media (max-width: 1140px) and (min-width: 961px) {
+@media (max-width: 1240px) and (min-width: 1101px) {
   .nav__link,
-  .nav__trigger { padding-inline: 0.5rem; font-size: 0.9rem; }
-  .nav__panel--wide { width: 500px; }
-}
-@media (max-width: 1040px) and (min-width: 961px) {
-  .header__actions .btn--sm { padding-inline: 0.75rem; font-size: 0.86rem; }
+  .nav__trigger { padding-inline: 0.42rem; font-size: 0.87rem; }
   .nav__trigger .icon { display: none; }
+  .header__call { display: none; }
+  .nav__panel--wide,
+  .nav__panel--end.nav__panel--wide { width: 500px; }
+}
+@media (max-width: 1100px) {
+  .primary-nav { display: none; }
+  .header__actions { margin-left: auto; gap: var(--space-3); }
+  .menu-toggle { display: inline-block; }
 }
 
 /* Top bar: the hours line is the first thing to go. */
@@ -697,4 +715,29 @@
 @media (max-width: 600px) {
   .ind-panel__media { aspect-ratio: 3 / 2; }
   .ind-panel__badge { left: var(--space-4); bottom: var(--space-4); }
+}
+
+/* ---- September 2026 brief components ---- */
+@media (max-width: 1024px) {
+  .proof-bar__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof-bar__item:nth-child(3) { border-left: 0; }
+  .proof-bar__item:nth-child(n + 3) { border-top: 1px solid var(--line-dark); }
+  .ms-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ms-flow__step:nth-child(2)::after { display: none; }
+}
+@media (max-width: 960px) {
+  .help-block,
+  .ms-feature__head,
+  .ms-feature__grid,
+  .price-summary,
+  .coverage,
+  .req-browse { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .proof-bar__list,
+  .ms-flow { grid-template-columns: 1fr; }
+  .proof-bar__item { padding-inline: 0; }
+  .proof-bar__item + .proof-bar__item { border-left: 0; border-top: 1px solid var(--line-dark); }
+  .ms-flow__step::after { display: none; }
+  .hero-trust { gap: var(--space-2) var(--space-4); }
 }

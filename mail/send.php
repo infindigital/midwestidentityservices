@@ -148,16 +148,23 @@ $data = [
     'message'  => textarea('message', 5000),
 ];
 
-// Must match the options in request-a-quote/index.html.
+// Must match the <option> values of #service in contact-us/index.html.
 $services = [
-    'Group or on-site fingerprinting',
-    'Nursing or allied health program',
-    'Security or alarm company',
-    'Multi-state program',
-    'Corporate Live Scan',
+    'Help me identify my fingerprint requirement',
+    'Multi-state licensing fingerprinting',
+    'Individual fingerprinting',
+    'Live Scan fingerprinting',
+    'FD-258 fingerprinting',
+    'ATF / EFT fingerprinting',
+    'Florida FDLE Live Scan',
+    'FINRA fingerprinting',
+    'FBI Identity History Summary or apostille',
+    'Corporate, mobile or group program',
+    'Drug testing',
+    'DOT drug and alcohol program',
     'Something else',
 ];
-$headcounts = ['1 to 9', '10 to 24', '25 to 49', '50 to 99', '100 or more', 'Not sure yet'];
+$headcounts = ['Just me', '1 to 9', '10 to 24', '25 to 49', '50 to 99', '100 or more', 'Not sure yet'];
 
 $errors = [];
 foreach (['name', 'email', 'service'] as $required) {
@@ -241,7 +248,8 @@ $text .= "\nMessage:\n" . ($data['message'] !== '' ? $data['message'] : 'No mess
     . 'Reply to this email to answer ' . $data['name'] . " directly.\n"
     . ($page !== '' ? "Page: {$page}\n" : '');
 
-$subject = 'New quote request: ' . $data['service'] . ' (' . $data['company'] . ')';
+$subject = ($data['service'] === 'Help me identify my fingerprint requirement' ? 'Requirement review: ' : 'New quote request: ')
+    . $data['service'] . ' (' . ($data['company'] !== '' ? $data['company'] : $data['name']) . ')';
 
 /* ---- Send through Gmail SMTP -------------------------------------------- */
 require __DIR__ . '/vendor/PHPMailer/Exception.php';

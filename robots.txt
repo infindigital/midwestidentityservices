@@ -1,4 +1,4 @@
-# robots.txt — Midwest Identity Services
+# robots.txt - Midwest Identity Services
 # https://midwestidentityservices.com/
 
 User-agent: *

@@ -5,7 +5,7 @@ https://midwestidentityservices.com/. It carries the content of the existing
 WordPress site over to the design system used by the organizations subdomain
 site, page for page and URL for URL.
 
-62 pages, no build step required to view them. Only images, layout partials and
+80 pages (78 indexable), no build step required to view them. Only images, layout partials and
 the sitemap are generated.
 
 ---
@@ -57,6 +57,15 @@ Midwest Main/
 │   mobile-fbi-identity-history-summary-for-executives/
 │   atf-eform-fingerprints-eft-file-or-fingerprint-cards/
 ├── corporate/example-company/                 Private employee booking page TEMPLATE (noindex)
+│
+│   Added for the October 2026 "new pages and near me" brief:
+├── immigration-fingerprinting/  security-clearance-fingerprinting/        Service pages
+├── kansas-board-of-nursing-fingerprinting/  kansas-real-estate-license-fingerprinting/
+│   missouri-real-estate-license-fingerprinting/  insurance-license-fingerprinting/
+│   teacher-substitute-fingerprinting/  nmls-fingerprinting/
+│   home-health-caregiver-fingerprinting/                                   Licensing pages
+├── location/fingerprinting-{lenexa,shawnee,leawood,prairie-village,lawrence}-ks/
+│   location/fingerprinting-{gladstone,grandview,belton,raymore}-mo/       City pages
 │
 ├── mail/                                      Contact form email (PHP): send.php, config.php, PHPMailer
 │
@@ -353,6 +362,11 @@ the LocalBusiness schema on the homepage and every location page. Grep for
   lists link to WordPress pages that do not exist. They are rendered here as
   plain text chips; only the 9 real location pages are linked. Decide whether
   those pages should be built or the lists trimmed.
+- **October 2026 brief, to confirm:** whether the business's equipment is
+  registered with DCSA SWFT (the security clearance page says FD-258 cards only);
+  whether it is a Fieldprint location (the NMLS page says no); Kansas Insurance
+  Department and KREC fees (the pages link to the agency rather than quote them);
+  and the drive times on the new city pages, which are estimates.
 - **Effective date on the privacy policy** reads "August 10, 2026", taken
   verbatim from the live site. A retention section was added in September 2026,
   so update the date and version when the client approves it.
@@ -404,3 +418,47 @@ it carries client pricing or sensitive instructions.
 (anchors `#kc-metro`, `#missouri`, `#kansas`). Cities without a real
 page are listed without links, as "call to confirm". Do not mass-produce
 city pages; each new one needs genuinely local content.
+
+---
+
+## 9. October 2026 brief: new pages and "near me" keywords
+
+Source: *Website Update Brief: New Pages and "Near Me" Keywords* (September 30, 2026).
+
+**New pages (18).** Two service pages, seven licensing pages and nine city pages.
+They use the existing templates, with BreadcrumbList + Service + LocalBusiness +
+FAQPage schema, their own title, H1, description and canonical. They are listed in
+the `SECTIONS` map, the footer (new "Licensing by Profession" list and the
+"Areas we serve" list) and the sitemap.
+
+**Agency methods were researched before writing** (October 2026, official sources).
+The pages state the limits honestly:
+
+| Program | Method | What we can do |
+|---|---|---|
+| Kansas Board of Nursing | Mailed FD-258, ORI KS920150Z, waiver signed by the technician | Roll the card, sign the waiver |
+| Kansas Real Estate Commission | Kansas Live Scan, or mailed FD-258 for applicants unable to Live Scan in Kansas | Card route only |
+| Kansas Insurance Dept. (resident producers) | Kansas Live Scan or mailed FD-258 from any provider | Card route |
+| KSDE teachers / substitutes | KSDE preformatted FD-258 by mail, or Kansas law-enforcement Live Scan | Card route |
+| Missouri MREC, DESE, DCI bail bond, childcare | MACHS + IdentoGO. Card scan **only for non-Missouri residents** or those unable to visit IdentoGO | Cards for Kansas/out-of-state residents only |
+| Missouri insurance producers | No fingerprint requirement found for standard resident producers | n/a |
+| NMLS loan originators | Fieldprint (NMLS-approved vendor) only | Not offered; page explains |
+| Home health / caregivers | MO Family Care Safety Registry and KS KDADS checks are name-based | FD-258 when an employer or other state asks |
+| USCIS biometrics | USCIS Application Support Center only | Not offered; stated on every relevant page |
+| Security clearance | DCSA via SWFT; FSO submits; hard cards must be converted | FD-258 cards for the FSO |
+
+Existing pages that said FD-258 cards were completed "to USCIS standards" for
+green card and citizenship applications (the nine original city pages, Live
+Scan, Fingerprint Methods, the FBI page and one blog post) were corrected to
+match.
+
+**"Near me" phrasing** is in the title, one or two headings, the opening
+paragraph and one new FAQ on the homepage, individual, mobile, FBI, business,
+FD-258 and multi-state pages, and on all 18 city pages. The nine original city
+pages had no FAQ, so each now has a two-question FAQ section with FAQPage schema.
+
+**Multi-state page.** New "Out-of-State Fingerprint Cards in Kansas City" section,
+"Out-of-State" in the title, and three new FAQs.
+
+**After launch.** Resubmit `sitemap.xml` in Google Search Console and request
+indexing for the 18 new URLs.

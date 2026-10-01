@@ -61,6 +61,7 @@ const SECTIONS = {
     'individual-fingerprinting/', 'live-scan-fingerprinting/', 'fd-258-ink-card-fingerprinting/',
     'atf-fingerprinting/', 'atf-efile-fingerprinting/', 'finra-fingerprinting/', 'florida-live-scan/',
     'nics-appeal-fingerprinting/', 'mobile-fingerprinting/', 'atf-eform-fingerprints-eft-file-or-fingerprint-cards/',
+    'immigration-fingerprinting/', 'security-clearance-fingerprinting/',
   ],
   fbi: [
     'fbi-background-checks-apostille/', 'how-long-do-fbi-background-check-results-take/',
@@ -69,6 +70,9 @@ const SECTIONS = {
   multistate: [
     'multi-state-fingerprinting/', 'which-fingerprint-cards-do-i-need-for-multiple-states/',
     'do-i-need-to-be-fingerprinted-again-for-every-fd-258-card/',
+    'kansas-board-of-nursing-fingerprinting/', 'kansas-real-estate-license-fingerprinting/',
+    'missouri-real-estate-license-fingerprinting/', 'insurance-license-fingerprinting/',
+    'teacher-substitute-fingerprinting/', 'nmls-fingerprinting/', 'home-health-caregiver-fingerprinting/',
   ],
   business: [
     'business-solutions/', 'corporate-fingerprinting/', 'group-fingerprinting/',
@@ -86,6 +90,9 @@ const SECTIONS = {
     'location/fingerprinting-blue-springs-mo/', 'location/fingerprinting-liberty-mo/',
     'location/fingerprinting-olathe-ks/', 'location/overland-park-ks/',
     'location/fbi-background-check-raytown-mo/', 'st-louis-fdle/', 'columbia-fdle/',
+    'location/fingerprinting-lenexa-ks/', 'location/fingerprinting-shawnee-ks/', 'location/fingerprinting-leawood-ks/',
+    'location/fingerprinting-prairie-village-ks/', 'location/fingerprinting-lawrence-ks/', 'location/fingerprinting-gladstone-mo/',
+    'location/fingerprinting-grandview-mo/', 'location/fingerprinting-belton-mo/', 'location/fingerprinting-raymore-mo/',
   ],
   resources: [
     'fingerprinting-requirements/', 'fingerprint-methods/', 'drug-testing-basics/', 'blogs/',

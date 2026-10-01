@@ -65,6 +65,30 @@ Also please confirm:
     copied from your current site.
 
 
+New pages from the October 2026 brief
+-------------------------------------
+  immigration-fingerprinting                  Immigration fingerprinting
+  security-clearance-fingerprinting           Security clearance fingerprinting
+  kansas-board-of-nursing-fingerprinting      Kansas Board of Nursing
+  kansas-real-estate-license-fingerprinting   Kansas real estate license
+  missouri-real-estate-license-fingerprinting Missouri real estate license
+  insurance-license-fingerprinting            Insurance license
+  teacher-substitute-fingerprinting           Teachers and substitutes
+  nmls-fingerprinting                         NMLS mortgage loan originators
+  home-health-caregiver-fingerprinting        Home health and caregivers
+  location/ (9 new city pages)                Lenexa, Shawnee, Leawood,
+                                              Prairie Village, Lawrence,
+                                              Gladstone, Grandview, Belton,
+                                              Raymore
+
+Please also confirm: is your equipment registered with DCSA's SWFT system,
+and are you a Fieldprint location? The security clearance and NMLS pages
+currently say no. The drive times on the new city pages are estimates.
+
+After the site goes live: resubmit the sitemap in Google Search Console and
+request indexing for the new pages.
+
+
 What is in this folder
 ----------------------
 index.html                       Homepage (start here)
